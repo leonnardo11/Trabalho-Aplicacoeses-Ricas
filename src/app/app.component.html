@@ -1,0 +1,27 @@
+<mat-toolbar>
+    <h1>Gerenciamento de Jogos</h1>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened="true" #sidenav>
+        <mat-nav-list>
+            <a mat-list-item routerLink="jogos">
+                <mat-icon>sports_esports</mat-icon>Lista de Jogos
+            </a>
+
+            <a mat-list-item routerLink="categoria">
+                <mat-icon>menu_book</mat-icon>Lista de Categorias
+            </a>
+
+            <a mat-list-item routerLink="sobre">
+                <mat-icon>star_half</mat-icon>Sobre Nós
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="min-height: calc(100vh - 100px); padding:16px;">
+            <mat-card>
+                <router-outlet></router-outlet>
+            </mat-card>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

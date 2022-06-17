@@ -1,0 +1,16 @@
+mat-toolbar{
+  background-color: #303030;
+  height: 7vh;
+}
+mat-sidenav{
+  background-color: #303030;
+  width: 25vh;
+}
+
+h1{
+  font-size: 1.8em;
+  color: #ff9019;
+  padding-left: 1.5em;
+}
+
+

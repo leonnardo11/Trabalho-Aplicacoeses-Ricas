@@ -1,0 +1,39 @@
+<h2>Categoria</h2>
+<table mat-table [dataSource]="Categorias" style="width: 100%">
+    <!--cria coluna nome-->
+    <ng-container matColumnDef="nome">
+        <th mat-header-cell *matHeaderCellDef>Nome </th>
+        <td mat-cell *matCellDef="let Categoria">{{Categoria.nome}}</td>
+    </ng-container>
+    <ng-container matColumnDef="acoes">
+        <th mat-header-cell *matHeaderCellDef>Açoes</th>
+        <td mat-cell *matCellDef="let Categoria">
+            <button mat-button (click)="editar(Categoria)">
+                <mat-icon>edit</mat-icon>
+          </button>
+
+            <button mat-button (click)="excluir(Categoria.id)">
+                <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+    <tr mat-row *matRowDef="let row; columns: colunas"></tr>
+</table>
+
+<button mat-fab (click)="novo()" class="fab">
+<mat-icon>
+add
+</mat-icon>
+
+</button>
+
+<div *ngIf="Categoria">
+    <mat-form-field class="form-field">
+        <mat-label>Nome:</mat-label>
+        <input type="text" matInput [(ngModel)]="Categoria.nome" placeholder="Qual o nome do Categoria que você quer cadastrar?" required>
+    </mat-form-field>
+
+
+    <button class="submitButton" mat-raised-button (click)="salvar()">Salvar</button>
+</div>
